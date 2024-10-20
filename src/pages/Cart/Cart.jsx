@@ -44,9 +44,9 @@ const Cart = ({ setTableNo }) => {
                                 <div className='cart-item-title cart-item-item'>
                                     <img src={item.image} alt={item.name} />
                                     <p>{item.name}</p>
-                                    <p>₹{(item.price * 80).toFixed(2)}</p>
+                                    <p>₹{(item.price ).toFixed(2)}</p>
                                     <p>{cartitem[item._id]}</p>
-                                    <p>₹{(item.price * cartitem[item._id] * 80).toFixed(2)}</p>
+                                    <p>₹{(item.price * cartitem[item._id] ).toFixed(2)}</p>
                                     <p className='cross' onClick={() => removefromcart(item._id)}>x</p>
                                 </div>
                                 <hr />
@@ -62,17 +62,17 @@ const Cart = ({ setTableNo }) => {
                     <div>
                         <div className="cart-total-details">
                             <p>Subtotal</p>
-                            <p>₹{(gettotalcartamount() * 80).toFixed(2)}</p>
+                            <p>₹{(gettotalcartamount() ).toFixed(2)}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <p>Service Charge</p>
-                            <p>₹{gettotalcartamount() === 0 ? 0 : (2 * 80).toFixed(2)}</p>
+                            <p>₹{gettotalcartamount() === 0 ? 0 : (2 ).toFixed(2)}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <b>Total</b>
-                            <b>₹{gettotalcartamount() === 0 ? 0 : ((gettotalcartamount() + 2) * 80).toFixed(2)}</b>
+                            <b>₹{gettotalcartamount() === 0 ? 0 : ((gettotalcartamount() + 2) * 1).toFixed(2)}</b>
                         </div>
                     </div>
                     <button className="proceed-button" onClick={handleProceed}>Proceed To Checkout</button>

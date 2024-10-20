@@ -12,9 +12,9 @@ const Placeorder = ({ tableNo }) => {
             .map(item => (
                 <div key={item._id} className="cart-item-details">
                     <p className="item-name">{item.name}</p>
-                    <p className="item-price">₹{(item.price * 80).toFixed(2)}</p>
+                    <p className="item-price">₹{(item.price * 1).toFixed(2)}</p>
                     <p className="item-quantity">{cartitem[item._id]}</p>
-                    <p className="item-subtotal">₹{(item.price * cartitem[item._id] * 80).toFixed(2)}</p>
+                    <p className="item-subtotal">₹{(item.price * cartitem[item._id] * 1).toFixed(2)}</p>
                 </div>
             ));
     };
@@ -49,17 +49,17 @@ const Placeorder = ({ tableNo }) => {
                     <div>
                         <div className="cart-total-details">
                             <p>Subtotal</p>
-                            <p>₹{(gettotalcartamount() * 80).toFixed(2)}</p>
+                            <p>₹{(gettotalcartamount() * 1).toFixed(2)}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <p>Service Charge</p>
-                            <p>₹{gettotalcartamount() === 0 ? 0 : (2 * 80).toFixed(2)}</p>
+                            <p>₹{gettotalcartamount() === 0 ? 0 : (2 * 1).toFixed(2)}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <b>Total</b>
-                            <b>₹{gettotalcartamount() === 0 ? 0 : ((gettotalcartamount() + 2) * 80).toFixed(2)}</b>
+                            <b>₹{gettotalcartamount() === 0 ? 0 : ((gettotalcartamount() + 2) * 1).toFixed(2)}</b>
                         </div>
                     </div>
                     <button className="proceed-button">Proceed Order</button>
